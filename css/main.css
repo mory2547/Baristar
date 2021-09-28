@@ -1,0 +1,11 @@
+main {
+  grid-area: main;
+  overflow: hidden;
+}
+#character_container {
+  text-align: center;
+}
+.character {
+  width: 8%;
+  height: 8%;
+}

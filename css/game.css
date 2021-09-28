@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+#Wait {
+  background-color: black;
+  opacity: 0.6;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+#Name, #Time, #Answer {
+  text-align: center;
+}
+#Name {
+  font-size: 30px;
+}
+.img_container {
+  text-align: center;
+}
+#Question {
+  text-align: center;
+  width: 40%;
+  height: 40%;
+}
+#Timer {
+  text-align: center;
+  color: green;
+  font-size: 30px;
+  border: 1px black solid;
+  width: 50px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+.Round {
+  font-size: 20px;
+  text-align: center;
+}
+.Answer_container {
+  display: grid;
+  width: 30vw;
+  grid-template-areas: 
+  'item item'
+  'item item';
+  margin-left: auto;
+  margin-right: auto;
+}
+.Answer_item {
+  grid-area: 'item';
+  height: 60px;
+}
+.item{ 
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+}
+.item:hover {
+  cursor: pointer;
+}
