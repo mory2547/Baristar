@@ -13,6 +13,17 @@ ul {
   width: 100%;
   height: 100%;
 }
+#Finish {
+  background-color: beige;
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  left: 50%;
+  top: 50%;
+  border: 1px solid black;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
 #Name, #Time, #Answer {
   text-align: center;
 }
@@ -24,8 +35,8 @@ ul {
 }
 #Question {
   text-align: center;
-  width: 40%;
-  height: 40%;
+  width: 23%;
+  height: 23%;
 }
 #Timer {
   text-align: center;
