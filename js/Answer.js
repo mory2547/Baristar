@@ -5,7 +5,8 @@ let imgList =
 'img/Question/매드맥스.jpg', 'img/Question/맨인블랙.jpg', 'img/Question/신세계.jpg', 
 'img/Question/어바웃 타임.jpg', 'img/Question/완벽한 타인.jpg', 'img/Question/콘스탄틴.jpg',
 'img/Question/월터의 상상은 현실이 된다.jpg', 'img/Question/트루먼 쇼.jpg',
-'img/Question/위대한 개츠비.jpg', 'img/Question/인셉션.jpg', 'img/Question/전우치.jpg', 'img/Question/인터스텔라.jpg', 'img/Question/존 윅.jpg','img/Question/청년경찰.jpg', 
+'img/Question/위대한 개츠비.jpg', 'img/Question/인셉션.jpg', 'img/Question/전우치.jpg', 
+'img/Question/인터스텔라.jpg', 'img/Question/존 윅.jpg','img/Question/청년경찰.jpg', 
 'img/Question/조커.jpg', 'img/Question/테이큰.jpg', 'img/Question/아저씨.jpg', 
 'img/Question/R.I.P.D.jpg'
 ];
@@ -37,10 +38,10 @@ let answerList23 = ['R.I.P.D', '1', '2', '3', '4', '5'];
 let nowAnswer = []
 
 const answerBtn = document.querySelectorAll('.item');
-const answerBtn1 = document.getElementsByClassName('item')[0];
-const answerBtn2 = document.getElementsByClassName('item')[1];
-const answerBtn3 = document.getElementsByClassName('item')[2];
-const answerBtn4 = document.getElementsByClassName('item')[3];
+const answerBtn0 = document.getElementsByClassName('item')[0];
+const answerBtn1 = document.getElementsByClassName('item')[1];
+const answerBtn2 = document.getElementsByClassName('item')[2];
+const answerBtn3 = document.getElementsByClassName('item')[3];
 const wait = document.getElementById('Wait');
 const finish = document.querySelector('#Finish');
 const round = document.querySelector('.Round');
@@ -63,14 +64,15 @@ function randomAnswer(array, array2, target) {
   const value = randomValue(array);
   target.innerText = array[value];
   array.splice(value, 1);
-  array2.push(value);
-  while(value == 0) {
+  if(value == 0) {
     array2.push("right");
+  } else {
+    array2.push(value);
   }
 }
 
 function lastAnswer(array, array2, target) {
-  if(answerBtn1.innerText, answerBtn2.innerText, answerBtn3.innerText === array[0]) {
+  if(array2.includes("right")) {
     randomAnswer(array, array2, target);
   }  else {
     target.innerText = array[0];
@@ -78,10 +80,10 @@ function lastAnswer(array, array2, target) {
   }
 }
 
+randomAnswer(answerList0, nowAnswer, answerBtn0);
 randomAnswer(answerList0, nowAnswer, answerBtn1);
 randomAnswer(answerList0, nowAnswer, answerBtn2);
-randomAnswer(answerList0, nowAnswer, answerBtn3);
-lastAnswer(answerList0, nowAnswer, answerBtn4);
+lastAnswer(answerList0, nowAnswer, answerBtn3);
 
 function startTimer() {
   second = 20;
@@ -109,16 +111,17 @@ function clickAnswer() {
   } else {
     wait.style.visibility = 'visible';
     setTimeout('finishWait(imgList)', 2000);
+    setTimeout('randomAnswer(answerList' + count + ', answerBtn0)', 2000);
     setTimeout('randomAnswer(answerList' + count + ', answerBtn1)', 2000);
     setTimeout('randomAnswer(answerList' + count + ', answerBtn2)', 2000);
-    setTimeout('randomAnswer(answerList' + count + ', answerBtn3)', 2000);
-    setTimeout('lastAnswer(answerList' + count + ', answerBtn4)', 2000);
+    setTimeout('lastAnswer(answerList' + count + ', answerBtn3)', 2000);
     countTimesCalled();
     clearInterval(time);
     startTimer();
+    nowAnswer = [];
   }
 }
+answerBtn0.addEventListener('click', clickAnswer);
 answerBtn1.addEventListener('click', clickAnswer);
 answerBtn2.addEventListener('click', clickAnswer);
 answerBtn3.addEventListener('click', clickAnswer);
-answerBtn4.addEventListener('click', clickAnswer);

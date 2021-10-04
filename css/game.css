@@ -55,6 +55,11 @@ ul {
   font-size: 20px;
   text-align: center;
 }
+.Score {
+  position: absolute;
+  left: 70%;
+  top: 15%;
+}
 .Answer_container {
   display: grid;
   width: 30vw;
