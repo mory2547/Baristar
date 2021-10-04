@@ -34,6 +34,8 @@ let answerList21 = ['테이큰', '1', '2', '3', '4', '5'];
 let answerList22 = ['아저씨', '1', '2', '3', '4', '5'];
 let answerList23 = ['R.I.P.D', '1', '2', '3', '4', '5'];
 
+let nowAnswer = []
+
 const answerBtn = document.querySelectorAll('.item');
 const answerBtn1 = document.getElementsByClassName('item')[0];
 const answerBtn2 = document.getElementsByClassName('item')[1];
@@ -49,12 +51,6 @@ function randomValue(array) {
   return randomValue;
 }
 
-function randomAnswer(array, target) {
-  const value = randomValue(array);
-  target.innerText = array[value];
-  array.splice(value, 1);
-}
-
 function randomQuestion(array, target) {
   const value = randomValue(array);
   target.src = array[value];
@@ -63,18 +59,29 @@ function randomQuestion(array, target) {
 
 randomQuestion(imgList, question);
 
-function lastAnswer(array, target) {
-  if(answerBtn1.innerText, answerBtn2.innerText, answerBtn3.innerText === array[0]) {
-    randomAnswer(array, target);
-  }  else {
-    target.innerText = array[0];
+function randomAnswer(array, array2, target) {
+  const value = randomValue(array);
+  target.innerText = array[value];
+  array.splice(value, 1);
+  array2.push(value);
+  while(value == 0) {
+    array2.push("right");
   }
 }
 
-randomAnswer(answerList0, answerBtn1);
-randomAnswer(answerList0, answerBtn2);
-randomAnswer(answerList0, answerBtn3);
-lastAnswer(answerList0, answerBtn4);
+function lastAnswer(array, array2, target) {
+  if(answerBtn1.innerText, answerBtn2.innerText, answerBtn3.innerText === array[0]) {
+    randomAnswer(array, array2, target);
+  }  else {
+    target.innerText = array[0];
+    array2.push("right");
+  }
+}
+
+randomAnswer(answerList0, nowAnswer, answerBtn1);
+randomAnswer(answerList0, nowAnswer, answerBtn2);
+randomAnswer(answerList0, nowAnswer, answerBtn3);
+lastAnswer(answerList0, nowAnswer, answerBtn4);
 
 function startTimer() {
   second = 20;
@@ -111,20 +118,6 @@ function clickAnswer() {
     startTimer();
   }
 }
-// function nonClick() {
-//   while(second == 0) {
-//     alert("You don't click");
-//     wait.style.visibility = 'visible';
-//     setTimeout('finishWait(imgList)', 2000);
-//     setTimeout('randomAnswer(answerList' + count + ', answerBtn1)', 2000);
-//     setTimeout('randomAnswer(answerList' + count + ', answerBtn2)', 2000);
-//     setTimeout('randomAnswer(answerList' + count + ', answerBtn3)', 2000);
-//     setTimeout('lastAnswer(answerList' + count + ', answerBtn4)', 2000);
-//     countTimesCalled();
-//     clearInterval(time);
-//     startTimer();
-//   }
-// }
 answerBtn1.addEventListener('click', clickAnswer);
 answerBtn2.addEventListener('click', clickAnswer);
 answerBtn3.addEventListener('click', clickAnswer);
