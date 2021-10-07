@@ -24,7 +24,9 @@ ul {
   transform: translate(-50%, -50%);
   visibility: hidden;
 }
-#Name, #Time, #Answer {
+#Name,
+#Time,
+#Answer {
   text-align: center;
 }
 #Name {
@@ -63,22 +65,31 @@ ul {
 .Answer_container {
   display: grid;
   width: 30vw;
-  grid-template-areas: 
-  'item item'
-  'item item';
+  grid-template-areas:
+    "item item"
+    "item item";
   margin-left: auto;
   margin-right: auto;
 }
 .Answer_item {
-  grid-area: 'item';
+  grid-area: "item";
   height: 60px;
 }
-.item{ 
+.item {
   padding: 0;
   width: 100%;
   height: 100%;
   border-radius: 0px;
 }
 .item:hover {
+  cursor: pointer;
+}
+.right_item {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+}
+.right_item:hover {
   cursor: pointer;
 }
