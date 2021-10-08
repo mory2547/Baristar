@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/game.css">
-  <title>Document</title>
-</head>
-<body>
-  <div id="Wait"></div>
-  <div id="Finish"></div>
-  <div id="Name">baristar</div>
-  <div id="Timer">20</div>
-  <div class="Round">Round 1</div>
-  <span class="Score">0</span>
-  <div class="img_container">
-    <img id="Question">
-  </div>
-  <div id="Answer">
-    <ul class="Answer_container">
-      <li class="Answer_item"><button class="item"></button></li>
-      <li class="Answer_item"><button class="item"></button></li>
-      <li class="Answer_item"><button class="item"></button></li>
-      <li class="Answer_item"><button class="item"></button></li>
-    </ul>
-  </div>
-  <script type="text/javascript" src="js/Timer.js"></script>
-  <script type="text/javascript" src="js/Answer.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/game.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="Wait"></div>
+    <div id="Finish">
+      <div id="Finish_id">Finished!!</div>
+      <div id="Finish_Score">Score: 0</div>
+      <div class="Finish_btn_container">
+        <a href="index.html" class="Finish_btn">홈으로</a>
+        <a href="game.html" class="Finish_btn">한번 더!</a>
+      </div>
+    </div>
+    <div id="Name">baristar</div>
+    <div id="Timer">20</div>
+    <div class="Round">Round 1</div>
+    <span class="Score">Score: 0</span>
+    <div class="img_container">
+      <img id="Question" />
+    </div>
+    <div id="Answer">
+      <ul class="Answer_container">
+        <li class="Answer_item"><button class="item"></button></li>
+        <li class="Answer_item"><button class="item"></button></li>
+        <li class="Answer_item"><button class="item"></button></li>
+        <li class="Answer_item"><button class="item"></button></li>
+      </ul>
+    </div>
+    <script src="js/Timer.js"></script>
+    <script src="js/Answer.js"></script>
+    <script src="js/Score.js"></script>
+  </body>
 </html>

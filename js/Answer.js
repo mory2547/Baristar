@@ -26,6 +26,7 @@ let imgList = [
   "img/Question/미드나잇 선.jpg",
   "img/Question/라라랜드.jpg",
 ];
+
 let answerList = [
   [
     { right: "19곰 테드" },
@@ -156,13 +157,10 @@ const answerBtn2 = document.getElementsByClassName("item")[2];
 const answerBtn3 = document.getElementsByClassName("item")[3];
 const wait = document.getElementById("Wait");
 const finish = document.querySelector("#Finish");
+const finishId = document.querySelector("#Finish_id");
+const finishScore = document.querySelector("#Finish_Score");
 const round = document.querySelector(".Round");
 const question = document.querySelector("#Question");
-
-function randomValue(array) {
-  const randomValue = Math.floor(Math.random() * array.length);
-  return randomValue;
-}
 
 function randomQuestion(array, target) {
   value = randomValue(array);
@@ -171,6 +169,11 @@ function randomQuestion(array, target) {
 }
 
 randomQuestion(imgList, question);
+
+function randomValue(array) {
+  const randomValue = Math.floor(Math.random() * array.length);
+  return randomValue;
+}
 
 function randomAnswer(target) {
   const answerValue = randomValue(answerList[value]);
@@ -221,17 +224,26 @@ function countTimesCalled() {
   return count;
 }
 
-function clickAnswer() {
+function clickAnswer(event) {
   if (count === 5) {
+    if (event.target.className == "right_item") {
+      clickRightAnswer();
+    }
     wait.style.visibility = "visible";
     finish.style.visibility = "visible";
+    finishScore.innerHTML = "Score: " + scoreCount;
     clearInterval(time);
   } else {
+    if (event.target.className == "right_item") {
+      setTimeout("clickRightAnswer()", 2000);
+    }
     wait.style.visibility = "visible";
     countTimesCalled();
     setTimeout("finishWait()", 2000);
     clearInterval(time);
     startTimer();
+    clearTimeout(nonClickTime);
+    setTimeout("nonClick1()", 2000);
     answerBtn0.className = "item";
     answerBtn1.className = "item";
     answerBtn2.className = "item";
@@ -242,3 +254,18 @@ answerBtn0.addEventListener("click", clickAnswer);
 answerBtn1.addEventListener("click", clickAnswer);
 answerBtn2.addEventListener("click", clickAnswer);
 answerBtn3.addEventListener("click", clickAnswer);
+
+function nonClick() {
+  wait.style.visibility = "visible";
+  finish.style.visibility = "visible";
+  finishId.innerHTML = "You are not Click";
+  finishScore.innerHTML = "Score: " + scoreCount;
+  clearInterval(time);
+  setTimeout("nonClick()", 20000);
+}
+
+function nonClick1() {
+  nonClickTime = setTimeout("nonClick()", 20000);
+}
+
+nonClick1();
