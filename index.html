@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Baristar</title>
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/footer.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Patrick+Hand&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div id="notice_box">
-      <div class="notice">공지사항</div>
-    </div>
-  </header>
-  <main>
-    <div id="play_box">
-      <ul id="play_container">
-        <li class="play_item"><a href="game.html">game start</a></li>
-        <li class="play_item"><a href="">login</a></li>
-        <li class="play_item"><a href="">Guide</a></li>
-      </ul>
-    </div>
-    <div id="character_container">
-      <img class="character" src="img/zebra-37045_1280.png">
-      <img class="character" src="img/cat-2677734_1920.jpg">
-    </div>
-  </main>
-  <footer>
-    <div id="footer_container">
-      <div class="footer_item">
-        랭킹
-        <ol class="ranking_container">
-          <li>xxxxxxxxx</li>
-          <li>aaaaaaaa</li>
-          <li>fffffffffff</li>
-        </ol>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baristar</title>
+    <link rel="stylesheet" href="css/font.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div id="notice_box">
+        <div class="notice">공지사항</div>
       </div>
-      <div class="footer_item">
-        로고
-        <ul>
-          <li>이용약관</li>
-          <li>고객센터</li>
-          <li>이메일: xxxxx@naver.com</li>
+    </header>
+    <main>
+      <div id="play_box">
+        <ul id="play_container">
+          <li class="play_item"><a href="game.html">game start</a></li>
+          <li class="play_item"><a href="">login</a></li>
+          <ul id="small_play_container">
+            <li class="play_item"><a href="">Guide</a></li>
+            <li class="play_item"><a href="store.html">Store</a></li>
+          </ul>
         </ul>
       </div>
-      <div class="footer_item">
-        <ul class="slide_container">
-          <li class="item_container"><img class="slide_item" src="img/Question/완벽한 타인.jpg"></li>
-          <li class="item_container"><img class="slide_item" src="img/Question/관상.jpg"></li>
-          <li class="item_container"><img class="slide_item" src="img/Question/그것.jpg"></li>
-        </ul>
-        <button class="slide_btn"></button>
-        <button class="slide_btn"></button>
-        <button class="slide_btn"></button>
+      <div id="character_container">
+        <img class="character" src="img/zebra-37045_1280.png" />
+        <img class="character" src="img/cat-2677734_1920.jpg" />
       </div>
-    </div>
-  </footer>
-  <script type="text/javascript" src="js/Slide.js"></script>
-</body>
+    </main>
+    <footer>
+      <div id="footer_container">
+        <div class="footer_item">
+          랭킹
+          <ol class="ranking_container">
+            <li>xxxxxxxxx</li>
+            <li>aaaaaaaa</li>
+            <li>fffffffffff</li>
+          </ol>
+        </div>
+        <div class="footer_item">
+          로고
+          <ul>
+            <li>이용약관</li>
+            <li>고객센터</li>
+            <li>이메일: xxxxx@naver.com</li>
+          </ul>
+        </div>
+        <div class="footer_item">
+          <ul class="slide_container">
+            <li class="item_container">
+              <img class="slide_item" src="img/Question/완벽한 타인.jpg" />
+            </li>
+            <li class="item_container">
+              <img class="slide_item" src="img/Question/관상.jpg" />
+            </li>
+            <li class="item_container">
+              <img class="slide_item" src="img/Question/그것.jpg" />
+            </li>
+          </ul>
+          <button class="slide_btn"></button>
+          <button class="slide_btn"></button>
+          <button class="slide_btn"></button>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/Slide.js"></script>
+  </body>
 </html>

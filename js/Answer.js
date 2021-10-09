@@ -204,8 +204,8 @@ lastAnswer(answerBtn3);
 
 function startTimer() {
   second = 20;
-  setTimeout("countDowun()", 2000);
-  setTimeout("Time.innerText = 20", 2000);
+  setTimeout("countDowun()", 1000);
+  setTimeout("Time.innerText = 20", 1000);
 }
 
 function finishWait() {
@@ -233,17 +233,18 @@ function clickAnswer(event) {
     finish.style.visibility = "visible";
     finishScore.innerHTML = "Score: " + scoreCount;
     clearInterval(time);
+    clearTimeout(nonClickTime);
   } else {
     if (event.target.className == "right_item") {
-      setTimeout("clickRightAnswer()", 2000);
+      setTimeout("clickRightAnswer()", 1000);
     }
     wait.style.visibility = "visible";
     countTimesCalled();
-    setTimeout("finishWait()", 2000);
+    setTimeout("finishWait()", 1000);
     clearInterval(time);
     startTimer();
     clearTimeout(nonClickTime);
-    setTimeout("nonClick1()", 2000);
+    setTimeout("nonClick1()", 1000);
     answerBtn0.className = "item";
     answerBtn1.className = "item";
     answerBtn2.className = "item";

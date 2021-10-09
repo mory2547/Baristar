@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baristar</title>
+    <link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/game.css" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="Wait"></div>
@@ -17,10 +24,14 @@
         <a href="game.html" class="Finish_btn">한번 더!</a>
       </div>
     </div>
+    <a href="index.html"><img class="Home" src="img/home-icon.png" /></a>
     <div id="Name">baristar</div>
     <div id="Timer">20</div>
-    <div class="Round">Round 1</div>
-    <span class="Score">Score: 0</span>
+    <ul id="Information_container">
+      <li class="Hint">Hint: 0</li>
+      <li class="Round">Round 1</li>
+      <li class="Score">Score: 0</li>
+    </ul>
     <div class="img_container">
       <img id="Question" />
     </div>
@@ -35,5 +46,6 @@
     <script src="js/Timer.js"></script>
     <script src="js/Answer.js"></script>
     <script src="js/Score.js"></script>
+    <script src="js/Hint.js"></script>
   </body>
 </html>
